@@ -1,34 +1,30 @@
 import {View, Text, ScrollView, TextInput, StyleSheet, TouchableOpacity} from 'react-native'
 
-const Login = () => {
-    return <View style = {styles.conatainer}>
-        <View style = {styles.card}>
-            <Text style = {{color : "#E1F0DA", fontSize : 24}}>Login</Text>
+const SignIn = () => {
+    return <ScrollView>
+        
+        <View style = {styles.container}>
+            <Text style = {{color : "#E1F0DA", fontSize : 24}}>Register Here</Text>
             <TextInput style = {styles.textInput} placeholder='Email'/>
-            <TextInput style = {styles.textInput} placeholder='Password'/>   
+            <TextInput style = {styles.textInput} placeholder='Password'/>
+            <TextInput style = {styles.textInput} placeholder='Confirm Password'/>     
             <TouchableOpacity style = {styles.register_button} onPress={() => {
-                console.log("Thanks")
+                console.log("Thank You")
             }} >
-                <Text>Login</Text>
+                <Text>Register</Text>
                 </TouchableOpacity>       
         </View>
-        </View>
+    </ScrollView>
 
 }
 
-export default Login
+export default SignIn
 
 const styles = StyleSheet.create({
-    // conatainer : {
-    //     backgroundColor : '#99BC85',
-    //     flex: 1,
-    //     justifyContent : 'center'
-    // },
-    card : {
+    container : {
         backgroundColor : '#99BC85',
         padding : 20,
         marginHorizontal : 2, 
-       
     },
     textInput : {
         backgroundColor : '#E1F0DA', 
