@@ -3,7 +3,7 @@ import Login from "./Login";
 import SignIn from "./SignIn";
 
 export {
-    Home, 
+    Home,
     Login,
     SignIn
 }

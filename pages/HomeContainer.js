@@ -3,12 +3,9 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
-import { Login, SignIn, Home } from '../pages';
+import { Login, SignIn, Home } from './pages';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Choose from './Choose';
-import AddQuestion from '../pages/AddQuestion';
-
 
 const Tab = createBottomTabNavigator()
 const screenOptions = {
@@ -26,21 +23,19 @@ const screenOptions = {
 
 }
 
-
-export default function AppContainer() {
-
-
-
+export default function HomeContainer() {
   return (
+
+    <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen 
-            name = " " 
-            component = {Choose} 
+            name = "feed" 
+            component = {Home} 
             options={{
               tabBarIcon : ({focused}) => {
                 return (
                   <View style = {{alignItems : "center", justifyContent : 'center'}}>
-                    <FontAwesome name="sign-in" size={24} color={ focused ? '#16247d' : "#111"} />
+                    <FontAwesome name="home" size={24} color={ focused ? '#16247d' : "#111"} />
                     <Text style = {{fontSize : 12, color : focused ? '#16247d' : '#111'}}>Sign In</Text>
                 </View>
                 )
@@ -48,13 +43,27 @@ export default function AppContainer() {
             }}
         />
         <Tab.Screen 
-            name = "  " 
-            component = {AddQuestion} 
+            name = "profile" 
+            component = {Home} 
             options={{
               tabBarIcon : ({focused}) => {
                 return (
                   <View style = {{alignItems : "center", justifyContent : 'center'}}>
-                    <Entypo name="login" size={24} color={ focused ? '#16247d' : "#111"} />
+                    <Entypo name="profile" size={24} color={ focused ? '#16247d' : "#111"} />
+                    <Text style = {{fontSize : 12, color : focused ? '#16247d' : '#111'}}>Login</Text>
+                </View>
+                )
+              }
+            }}
+        />
+        <Tab.Screen 
+            name = "rank" 
+            component = {Home} 
+            options={{
+              tabBarIcon : ({focused}) => {
+                return (
+                  <View style = {{alignItems : "center", justifyContent : 'center'}}>
+                    <Entypo name="rank" size={24} color={ focused ? '#16247d' : "#111"} />
                     <Text style = {{fontSize : 12, color : focused ? '#16247d' : '#111'}}>Login</Text>
                 </View>
                 )
@@ -62,6 +71,7 @@ export default function AppContainer() {
             }}
         />
       </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 

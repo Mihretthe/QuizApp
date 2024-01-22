@@ -1,0 +1,23 @@
+{
+    "users" : {
+        "1" : {
+            "email" : "mihret@gmail.com",
+            "password" : "pass"
+        }, 
+        "2" : {
+            "email" : "abebe@gmail.com",
+            "password" : "word"
+        }
+        
+    },
+    "questions" : {
+        "1" : {
+            "question" : "What is Ups?",
+            "choices" : [
+                "Good",
+                "Bad"
+            ],
+            "answer" : "a"
+        }
+    }
+}

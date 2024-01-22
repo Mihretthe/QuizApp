@@ -3,9 +3,13 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
-import { Login, SignIn } from './pages';
+import { Login, SignIn , Home} from './pages';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Navigation from './routes/Navigator';
+import Choose from './components/Choose';
+import AddQuestion from './pages/AddQuestion';
+
 
 const Tab = createBottomTabNavigator()
 const screenOptions = {
@@ -23,41 +27,46 @@ const screenOptions = {
 
 }
 
-export default function App() {
-  return (
 
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={screenOptions}>
-        <Tab.Screen 
-            name = " " 
-            component = {SignIn} 
-            options={{
-              tabBarIcon : ({focused}) => {
-                return (
-                  <View style = {{alignItems : "center", justifyContent : 'center'}}>
-                    <FontAwesome name="sign-in" size={24} color={ focused ? '#16247d' : "#111"} />
-                    <Text style = {{fontSize : 12, color : focused ? '#16247d' : '#111'}}>Sign In</Text>
-                </View>
-                )
-              }
-            }}
-        />
-        <Tab.Screen 
-            name = "  " 
-            component = {Login} 
-            options={{
-              tabBarIcon : ({focused}) => {
-                return (
-                  <View style = {{alignItems : "center", justifyContent : 'center'}}>
-                    <Entypo name="login" size={24} color={ focused ? '#16247d' : "#111"} />
-                    <Text style = {{fontSize : 12, color : focused ? '#16247d' : '#111'}}>Login</Text>
-                </View>
-                )
-              }
-            }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+export default function App() {
+
+
+
+  return (
+   <Navigation />
+    
+    // <NavigationContainer>
+    //   <Tab.Navigator screenOptions={screenOptions}>
+    //     <Tab.Screen 
+    //         name = " " 
+    //         component = {SignIn} 
+    //         options={{
+    //           tabBarIcon : ({focused}) => {
+    //             return (
+    //               <View style = {{alignItems : "center", justifyContent : 'center'}}>
+    //                 <FontAwesome name="sign-in" size={24} color={ focused ? '#16247d' : "#111"} />
+    //                 <Text style = {{fontSize : 12, color : focused ? '#16247d' : '#111'}}>Sign In</Text>
+    //             </View>
+    //             )
+    //           }
+    //         }}
+    //     />
+    //     <Tab.Screen 
+    //         name = "  " 
+    //         component = {Login} 
+    //         options={{
+    //           tabBarIcon : ({focused}) => {
+    //             return (
+    //               <View style = {{alignItems : "center", justifyContent : 'center'}}>
+    //                 <Entypo name="login" size={24} color={ focused ? '#16247d' : "#111"} />
+    //                 <Text style = {{fontSize : 12, color : focused ? '#16247d' : '#111'}}>Login</Text>
+    //             </View>
+    //             )
+    //           }
+    //         }}
+    //     />
+    //   </Tab.Navigator>
+    // </NavigationContainer>
   );
 }
 
